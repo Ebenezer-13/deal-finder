@@ -1,61 +1,74 @@
 import React from "react";
-import { push } from "react-router-redux";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from "../../modules/counter";
+// import { push } from "react-router-redux";
+// import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
+import styled from "styled-components";
+import FlexContainer from "../../components/FlexContainer";
 
-const Home = props => (
-  <div>
-    <h1>Home</h1>
-    <p>Count: {props.count}</p>
+const Container = styled(FlexContainer)`
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+`;
 
-    <p>
-      <button onClick={props.increment} disabled={props.isIncrementing}>
-        Increment
-      </button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
-        Increment Async
-      </button>
-    </p>
+const IntroContainer = styled(FlexContainer)`
+  margin-top: 10vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  height: 35vh;
+  background: lightgrey;
+  border: 1px solid black;
+  padding: 5em;
+  text-align: center;
+`;
 
-    <p>
-      <button onClick={props.decrement} disabled={props.isDecrementing}>
-        Decrementing
-      </button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
-        Decrement Async
-      </button>
-    </p>
+const Button = styled.button`
+  background: navy;
+  color: white;
+  padding: 5px;
+  height: 50px;
+  width: 100px;
+`;
 
-    <p>
-      <button onClick={() => props.changePage()}>
-        Go to about page via redux
-      </button>
-    </p>
-  </div>
-);
+const ButtonContainer = styled(FlexContainer)`
+  flex-direction: row;
+  justify-content: space-around;
+  width: 250px;
+  margin-bottom: 20vh;
+`;
 
-const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      increment,
-      incrementAsync,
-      decrement,
-      decrementAsync,
-      changePage: () => push("/about-us")
-    },
-    dispatch
+export default function Home() {
+  return (
+    <Container>
+      <IntroContainer>
+        In here will be some text introducing the app, who we are and why we are
+        doing what we are doing
+      </IntroContainer>
+      <ButtonContainer>
+        <Button>I'm New</Button>
+        <Button>I'm a Returning Customer</Button>
+      </ButtonContainer>
+    </Container>
   );
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+// const mapStateToProps = state => ({
+//   count: state.counter.count,
+//   isIncrementing: state.counter.isIncrementing,
+//   isDecrementing: state.counter.isDecrementing
+// });
+
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       increment,
+//       incrementAsync,
+//       decrement,
+//       decrementAsync,
+//       changePage: () => push("/about-us")
+//     },
+//     dispatch
+//   );
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Home);
