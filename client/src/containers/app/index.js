@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Header from "../../components/Header";
-import Home from "../home";
+import Home from "../Home";
 import FundingReqs from "../FundingReqs";
 import ProjectDetails from "../ProjectDetails";
 import InitialOptions from "../InitialOptions";
