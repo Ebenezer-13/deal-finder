@@ -1,7 +1,4 @@
 import React from "react";
-// import { push } from "react-router-redux";
-// import { bindActionCreators } from "redux";
-// import { connect } from "react-redux";
 import styled from "styled-components";
 import FlexContainer from "../../components/FlexContainer";
 
@@ -10,6 +7,16 @@ const Container = styled(FlexContainer)`
   height: 100vh;
   justify-content: space-around;
   align-items: center;
+`;
+
+const TitleContainer = styled.div`
+  width: 50%;
+  color: navy;
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 5vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
 `;
 
 const IntroContainer = styled(FlexContainer)`
@@ -38,16 +45,23 @@ const ButtonContainer = styled(FlexContainer)`
   margin-bottom: 20vh;
 `;
 
+const handleClick = route => {
+  window.location = route;
+};
+
 export default function Home() {
   return (
     <Container>
+      <TitleContainer>PropFinder.com</TitleContainer>
       <IntroContainer>
         In here will be some text introducing the app, who we are and why we are
         doing what we are doing
       </IntroContainer>
       <ButtonContainer>
-        <Button>I'm New</Button>
-        <Button>I'm a Returning Customer</Button>
+        <Button onClick={() => handleClick("/funding-reqs")}>I'm New</Button>
+        <Button onClick={() => handleClick("/funding-reqs")}>
+          I'm a Returning Customer
+        </Button>
       </ButtonContainer>
     </Container>
   );
