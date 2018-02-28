@@ -2,6 +2,8 @@
   "name": "deal-finder",
   "version": "0.1.0",
   "private": true,
+  "description": "Deal finder prototype",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
@@ -10,8 +12,7 @@
     "nodemon": "^1.15.1"
   },
   "scripts": {
-    "start": "cd client react-scripts start",
-    "build": "cd client react-scripts build",
+    "start": "node index.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "client": "cd client && npm start",
