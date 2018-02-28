@@ -14,19 +14,17 @@ const Bar = styled.header`
 
 // const Tab = styled(Link)`color: white;`;
 
-export default class Header extends React.Component {
-  render() {
-    return (
-      <Bar>
-        <Link to="/">Home</Link>
-        <Link to="/funding-reqs">Funding Requirements</Link>
-        <Link to="/project-details">Project Details</Link>
-        <Link to="/initial-options">Initial Funding Options</Link>
-        <Link to="/about-you">About You</Link>
-        <Link to="/document-submission">Document Submission</Link>
-        <Link to="/thank-you">Thank You</Link>
-        <p>{this.props.lol}</p>
-      </Bar>
-    );
-  }
+export default function Header({ lol }) {
+  return (
+    <Bar>
+      <Link to="/">Home</Link>
+      <Link to="/funding-reqs">Funding Requirements</Link>
+      <Link to="/project-details">Project Details</Link>
+      <Link to="/initial-options">Initial Funding Options</Link>
+      <Link to="/about-you">About You</Link>
+      <Link to="/document-submission">Document Submission</Link>
+      <Link to="/thank-you">Thank You</Link>
+      {lol}
+    </Bar>
+  );
 }
