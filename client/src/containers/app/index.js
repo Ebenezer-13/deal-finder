@@ -1,7 +1,13 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Header from "../../components/Header";
 import Home from "../home";
-import About from "../about";
+import FundingReqs from "../FundingReqs";
+import ProjectDetails from "../ProjectDetails";
+import InitialOptions from "../InitialOptions";
+import AboutYou from "../AboutYou";
+import DocumentSubmission from "../DocumentSubmission";
+import ThankYou from "../ThankYou";
 
 import styled from "styled-components";
 import FlexContainer from "../../components/FlexContainer";
@@ -34,15 +40,22 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <header>
-          <Link to="/">Home</Link>
-          <Link to="/about-us">About</Link>
+        <Header lol="hello">
           <p>{this.state.response}</p>
-        </header>
+        </Header>
 
         <main>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about-us" component={About} />
+          <Route exact path="/funding-reqs" component={FundingReqs} />
+          <Route exact path="/project-details" component={ProjectDetails} />
+          <Route exact path="/initial-options" component={InitialOptions} />
+          <Route exact path="/about-you" component={AboutYou} />
+          <Route
+            exact
+            path="/document-submission"
+            component={DocumentSubmission}
+          />
+          <Route exact path="/thank-you" component={ThankYou} />
         </main>
       </Container>
     );
