@@ -1,3 +1,26 @@
+Run the follwing commands to run locally:
+
+`git clone git@github.com:Ebenezer-13/deal-finder.git`
+`cd deal-finder/server;`
+`npm install`
+`npm start`
+
+Then in a second terminal window run:
+`cd path/to/app/`
+`cd client`
+`npm install`
+`npm start`
+
+Then the app should be running at http://localhost:3000
+
+
+
+
+**Below are the instructions which came with create-react-app, the starter kit used for this project**
+------------------------------------------------------------
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
